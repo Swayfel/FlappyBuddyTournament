@@ -12,6 +12,11 @@ namespace CsClient.Bots
         /// <inheritdoc/>
         public bool Play(PlayState? playState)
         {
+            if (playState.Player.PosY < 50)
+                _fly = false;
+
+            if (playState.Player.PosY > 480)
+                _fly = true;
             // put your logic here
             return _fly;
         }
@@ -19,7 +24,7 @@ namespace CsClient.Bots
         public MyAi()
         {
             // give your bot a super duper cool name
-            Name = "YourNameHere";
+            Name = "Swayfelbot";
         }
     }
 }
